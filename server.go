@@ -34,6 +34,8 @@ func getAbi(w http.ResponseWriter, r *http.Request) {
 	params := r.URL.Query()
 	addr := Address(params.Get("address"))
 
+	fmt.Println(r)
+
 	fmt.Printf("Received request for the ABI of contract %s\n", addr)
 
 	resp := address2ABI(addr)
